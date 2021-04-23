@@ -46,6 +46,8 @@ export class BookService {
       }
     }
 
+    (await entity).save();
+
     return entity;
   }
 
