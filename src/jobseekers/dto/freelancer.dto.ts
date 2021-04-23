@@ -1,7 +1,8 @@
 export default class CreateFreelancerDto {
     readonly freelancerEmail: string;
-    readonly projectId: number;
-    readonly cost: number;
-    readonly createdAt: Date;
-    readonly updatedAt: Date;
+    readonly university: string;
+    readonly resumeUrl: string;
+    readonly point: number;
+    readonly description: string;
+    readonly abilities: Array<number>;
 }
