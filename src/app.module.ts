@@ -11,9 +11,10 @@ import { HelloModule } from './hello/hello.module';
 import { UserController } from './user/user.controller';
 import { UserModule } from './user/user.module';
 import { UserService } from './user/user.service';
+import { JobseekersModule } from './jobseekers/jobseekers.module';
 
 @Module({
-  imports: [HelloModule, BooksModule, UserModule, GenreModule, BooksModule],
+  imports: [HelloModule, BooksModule, UserModule, GenreModule, BooksModule, JobseekersModule],
   controllers: [AppController, UserController, BookController, GenreController],
   providers: [AppService, UserService, GenreService, BookService],
 })
