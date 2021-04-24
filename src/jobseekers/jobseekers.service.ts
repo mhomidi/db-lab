@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import CreateFreelancerDto from './dto/freelancer.dto';
-import CreateProjectDto from './dto/project.dto';
-import CreateOfferDto from './dto/offer.dto'
-import CreateAbilityDto from './dto/ability.dto'
+import CreateFreelancerDto from './dto/create-freelancer.dto';
+import CreateProjectDto from './dto/create-project.dto';
+import CreateOfferDto from './dto/create-offer.dto'
+import CreateAbilityDto from './dto/create-ability.dto'
 import FreelancerEntity from 'src/db/freelancer.entity';
 import AbilityEntity from 'src/db/ability.entity';
 import ProjectEntity from 'src/db/project.entity';
@@ -32,6 +32,13 @@ export class JobseekersService {
 
     async getAllFreelancer() {
         return FreelancerEntity.find();
+    }
+
+    async deleteFreelancer(email: string) {
+        const freelancer = FreelancerEntity.findOne(email);
+        (await freelancer).remove();
+
+        return freelancer;
     }
 
     async insertProject(projectData: CreateProjectDto) {
@@ -70,6 +77,13 @@ export class JobseekersService {
         return ProjectEntity.find();
     }
 
+    async deleteProject(projectId: string) {
+        const project = ProjectEntity.findOne(projectId);
+        (await project).remove();
+
+        return project;
+    }
+
     async insertOffer(offerData: CreateOfferDto) {
         const {
             freelancerEmail,
@@ -95,6 +109,13 @@ export class JobseekersService {
         return OfferEntity.find();
     }
 
+    async deleteOffer(offerId: string) {
+        const offer = OfferEntity.findOne(offerId);
+        (await offer).remove();
+
+        return offer;
+    }
+
     async insertAbility(abilityData: CreateAbilityDto) {
         const {
             title,
@@ -110,5 +131,12 @@ export class JobseekersService {
 
     async getAllAbilities() {
         return AbilityEntity.find();
+    }
+
+    async deleteAbility(abilityId: string) {
+        const ability = AbilityEntity.findOne(abilityId);
+        (await ability).remove();
+
+        return ability;
     }
 }
