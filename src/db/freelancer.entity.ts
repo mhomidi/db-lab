@@ -1,11 +1,11 @@
-import { BaseEntity, Column, Entity, JoinTable, ManyToMany } from "typeorm";
+import { BaseEntity, Column, Entity, JoinTable, ManyToMany, PrimaryColumn } from "typeorm";
 import AbilityEntity from "./ability.entity";
 
 
 @Entity()
 export default class FreelancerEntity extends BaseEntity
 {
-    @Column({ length: 50 })
+    @PrimaryColumn({ length: 50 })
     email: string;
 
     @Column({ length: 50 })
