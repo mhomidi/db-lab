@@ -1,4 +1,4 @@
-export default class Offer {
+export default class CreateOfferDto {
     readonly freelancerEmail: string;
     readonly projectId: number;
     readonly cost: number;

@@ -1,4 +1,4 @@
-export default class Ability {
+export default class CraeteAbilityDto {
     readonly title: string;
-    readonly categoryId: string;
+    readonly categoryId: number;
 }
